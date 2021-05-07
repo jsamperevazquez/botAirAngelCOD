@@ -1,10 +1,11 @@
 package bot
 
+import bot.command.Context
 import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
+import com.github.kotlintelegrambot.dispatcher.Dispatcher
 import com.github.kotlintelegrambot.dispatcher.command
-import com.github.kotlintelegrambot.entities.ChatId
-import com.github.kotlintelegrambot.network.fold
+import com.github.kotlintelegrambot.updater.Updater
 
 /**
  *
@@ -13,12 +14,13 @@ import com.github.kotlintelegrambot.network.fold
  * @since 07/05/2021
  **/
 object Bot {
-    val bot = bot {
+    lateinit var dispatcher : Dispatcher
+	val bot = bot {
         token = Configuration.PROPERTIES["TOKEN"].toString()
-        dispatch {
-
-        }
+		dispatcher = updater.dispatcher
     }
+
+	private val commandManager = CommandManager()
 
     init {
         println("[!] Bot initialized")
@@ -28,7 +30,14 @@ object Bot {
      * Starts the Bot
      */
     fun start() {
-        println("[!] Bot startPolling")
         bot.startPolling()
+        println("[!] Bot started polling")
+    }
+
+    fun addToDispatcher(name : String) {
+		dispatcher.command(name) {
+			val context = Context(bot, message)
+			commandManager.handle(name, context)
+		}
     }
 }
