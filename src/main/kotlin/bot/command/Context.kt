@@ -19,13 +19,17 @@ class Context(private val bot: Bot, private val message : Message) {
 	fun getMessage() : Message = message
 	fun getMessageId() : Long = message.messageId
 	fun getUser() : User? = message.from
+
+	fun sendDice() {
+		bot.sendDice(getChat())
+	}
 	fun sendMessage(text : String) {
-		bot.sendMessage(ChatId.fromId(message.chat.id), text)
+		bot.sendMessage(getChat(), text)
 	}
 	fun sendReply(text : String) {
 		bot.sendMessage(
-			chatId = ChatId.fromId(message.chat.id),
+			chatId = getChat(),
 			text = text,
-			replyToMessageId = message.messageId)
+			replyToMessageId = getMessageId())
 	}
 }

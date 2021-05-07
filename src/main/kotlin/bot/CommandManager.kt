@@ -2,8 +2,9 @@ package bot
 
 import bot.Bot.addToDispatcher
 import bot.command.Context
-import bot.command.Hello
+import bot.command.commands.Hello
 import bot.command.ICommand
+import bot.command.commands.Dice
 
 /**
  *
@@ -16,7 +17,7 @@ class CommandManager {
 
 	init {
 		addCommand("hello", Hello())
-
+		addCommand("dice", Dice())
 	}
 
 	fun addCommand(name : String, command : ICommand) {

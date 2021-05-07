@@ -1,4 +1,7 @@
-package bot.command
+package bot.command.commands
+
+import bot.command.Context
+import bot.command.ICommand
 
 /**
  *
