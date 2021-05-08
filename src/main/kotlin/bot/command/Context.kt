@@ -1,10 +1,9 @@
 package bot.command
 
 import com.github.kotlintelegrambot.Bot
-import com.github.kotlintelegrambot.entities.Chat
-import com.github.kotlintelegrambot.entities.ChatId
-import com.github.kotlintelegrambot.entities.Message
-import com.github.kotlintelegrambot.entities.User
+import com.github.kotlintelegrambot.entities.*
+import com.github.kotlintelegrambot.entities.keyboard.InlineKeyboardButton
+import kotlin.coroutines.coroutineContext
 
 /**
  *
@@ -32,4 +31,20 @@ class Context(private val bot: Bot, private val message : Message) {
 			text = text,
 			replyToMessageId = getMessageId())
 	}
+	fun sendAuthors(){
+		bot.sendMessage(
+			chatId = getChat(),
+			text = "Bot authors",
+			replyMarkup = InlineKeyboardMarkup.create(
+				listOf(
+					InlineKeyboardButton.CallbackData("Angel Sampere", "Sampere"),
+					InlineKeyboardButton.CallbackData("Jose Ramón Aira", "Aira")
+				)
+			)
+		)
+		bot.answerCallbackQuery("Sampere",url = "https://github.com/jsamperevazquez?tab=repositories",showAlert = true)
+		bot.answerCallbackQuery("Aira",url = "https://github.com/jairagil?tab=repositories",showAlert = true)
+
+	}
+
 }
