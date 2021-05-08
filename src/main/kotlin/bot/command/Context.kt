@@ -3,6 +3,8 @@ package bot.command
 import com.github.kotlintelegrambot.Bot
 import com.github.kotlintelegrambot.entities.*
 import com.github.kotlintelegrambot.entities.keyboard.InlineKeyboardButton
+import retrofit2.http.Url
+import java.util.*
 import kotlin.coroutines.coroutineContext
 
 /**
@@ -37,14 +39,11 @@ class Context(private val bot: Bot, private val message : Message) {
 			text = "Bot authors",
 			replyMarkup = InlineKeyboardMarkup.create(
 				listOf(
-					InlineKeyboardButton.CallbackData("Angel Sampere", "Sampere"),
-					InlineKeyboardButton.CallbackData("Jose Ramón Aira", "Aira")
+					InlineKeyboardButton.Url("Jose Angel Sampere","https://github.com/jsamperevazquez"),
+					InlineKeyboardButton.Url("Jose Ramon Aira","https://github.com/jairagil")
 				)
 			)
 		)
-		bot.answerCallbackQuery("Sampere",url = "https://github.com/jsamperevazquez?tab=repositories",showAlert = true)
-		bot.answerCallbackQuery("Aira",url = "https://github.com/jairagil?tab=repositories",showAlert = true)
-
 	}
 
 }
