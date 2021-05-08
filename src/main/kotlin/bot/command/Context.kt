@@ -12,7 +12,8 @@ import com.github.kotlintelegrambot.entities.User
  * @author Aira
  * @since 07/05/2021
  **/
-class Context(private val bot: Bot, private val message : Message) {
+class Context(private val bot: Bot, private val message : Message, private val args : List<String> ) {
+	fun getArgs() : List<String> = args
 	fun getBot() : Bot = bot
 	fun getChat() : ChatId = ChatId.fromId(message.chat.id)
 	fun getChatId() : Long = message.chat.id

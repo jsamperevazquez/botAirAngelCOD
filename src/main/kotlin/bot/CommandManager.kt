@@ -5,6 +5,7 @@ import bot.command.Context
 import bot.command.commands.Hello
 import bot.command.ICommand
 import bot.command.commands.Dice
+import bot.command.commands.OpenWeatherMap
 
 /**
  *
@@ -18,6 +19,7 @@ class CommandManager {
 	init {
 		addCommand("hello", Hello())
 		addCommand("dice", Dice())
+		addCommand("weather", OpenWeatherMap())
 	}
 
 	fun addCommand(name : String, command : ICommand) {

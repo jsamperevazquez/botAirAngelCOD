@@ -16,7 +16,7 @@ import com.github.kotlintelegrambot.updater.Updater
 object Bot {
     lateinit var dispatcher : Dispatcher
 	val bot = bot {
-        token = Configuration.PROPERTIES["TOKEN"].toString()
+        token = Configuration.PROPERTIES["token"].toString()
 		dispatcher = updater.dispatcher
     }
 
@@ -36,7 +36,7 @@ object Bot {
 
     fun addToDispatcher(name : String) {
 		dispatcher.command(name) {
-			val context = Context(bot, message)
+			val context = Context(bot, message, args)
 			commandManager.handle(name, context)
 		}
     }

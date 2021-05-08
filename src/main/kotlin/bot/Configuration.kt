@@ -14,18 +14,27 @@ object Configuration {
     /**
      * Loads a configuration file using KEY=VALUE statement
      */
-    fun fromFile(path : String) {
+    fun fromFile(path : String) : Boolean {
         val file = File(path)
         if (file.exists()) {
+        	println("[!] Configuration started")
+
             file.forEachLine {
                 val prop = it.split("=").toTypedArray()
                 if (prop.size > 1) {
-                    PROPERTIES[prop[0]] = prop[1]
+					println("- '${prop[0]}' found")
+                    PROPERTIES[prop[0].toLowerCase()] = prop[1]
                 }
             }
+
+			println()
+
+			return true
         } else {
             println("[!] No configuration found, creating configuration file")
             file.createNewFile()
+
+			return false
         }
     }
 }
