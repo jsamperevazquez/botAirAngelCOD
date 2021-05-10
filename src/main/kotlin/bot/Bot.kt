@@ -14,17 +14,13 @@ import com.github.kotlintelegrambot.updater.Updater
  * @since 07/05/2021
  **/
 object Bot {
-    lateinit var dispatcher : Dispatcher
-	val bot = bot {
-<<<<<<< HEAD
-        token = Configuration.PROPERTIES["TOKEN"].toString()
-=======
+    lateinit var dispatcher: Dispatcher
+    val bot = bot {
         token = Configuration.PROPERTIES["token"].toString()
->>>>>>> a1174412d44a08a22b1548846d66c17b89e17368
-		dispatcher = updater.dispatcher
+        dispatcher = updater.dispatcher
     }
 
-	private val commandManager = CommandManager()
+    private val commandManager = CommandManager()
 
     init {
         println("[!] Bot initialized")
@@ -38,14 +34,10 @@ object Bot {
         println("[!] Bot started polling")
     }
 
-    fun addToDispatcher(name : String) {
-		dispatcher.command(name) {
-<<<<<<< HEAD
-			val context = Context(bot, message)
-=======
-			val context = Context(bot, message, args)
->>>>>>> a1174412d44a08a22b1548846d66c17b89e17368
-			commandManager.handle(name, context)
-		}
+    fun addToDispatcher(name: String) {
+        dispatcher.command(name) {
+            val context = Context(bot, message, args)
+            commandManager.handle(name, context)
+        }
     }
 }

@@ -4,6 +4,7 @@ import bot.Bot.addToDispatcher
 import bot.command.Context
 import bot.command.commands.Hello
 import bot.command.ICommand
+import bot.command.commands.Authors
 import bot.command.commands.Dice
 import bot.command.commands.OpenWeatherMap
 
@@ -20,6 +21,7 @@ class CommandManager {
 		addCommand("hello", Hello())
 		addCommand("dice", Dice())
 		addCommand("weather", OpenWeatherMap())
+		addCommand("authors",Authors())
 	}
 
 	fun addCommand(name : String, command : ICommand) {
