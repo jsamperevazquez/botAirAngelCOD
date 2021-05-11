@@ -1,8 +1,17 @@
 # Telegram Bot
 Project made with Kotlin
 
-## Usage
+## Configuration
+```
+TO DO
+```
 
+## Usage
+```
+TO DO
+```
 
 ## Libraries
-- [Kotlin Telegram Bot](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot)
+- [Gson](https://github.com/google/gson) 
+- [Kotlin Telegram Bot](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot)  
+- [OkHttp](https://github.com/square/okhttp)  
