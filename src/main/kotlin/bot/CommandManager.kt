@@ -1,12 +1,11 @@
+
 package bot
 
 import bot.Bot.addToDispatcher
 import bot.command.Context
-import bot.command.commands.Hello
 import bot.command.ICommand
-import bot.command.commands.Authors
-import bot.command.commands.Dice
-import bot.command.commands.OpenWeatherMap
+import bot.command.commands.*
+
 
 /**
  *
@@ -22,6 +21,7 @@ class CommandManager {
 		addCommand("dice", Dice())
 		addCommand("weather", OpenWeatherMap())
 		addCommand("authors",Authors())
+		addCommand("price",CoinPrices())
 	}
 
 	fun addCommand(name : String, command : ICommand) {
