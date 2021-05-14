@@ -11,7 +11,7 @@ import bot.command.ICommand
  * @author Aira
  * @since 08/05/2021
  **/
-class OpenWeatherMap : ICommand {
+class kOpenWeatherMap : ICommand {
 	override fun execute(context : Context) {
 		val args = context.getArgs()
 		var key : String? = null
