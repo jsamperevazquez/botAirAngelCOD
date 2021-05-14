@@ -13,30 +13,55 @@ import bot.command.commands.*
  * @since 07/05/2021
  **/
 class CommandManager {
-    val commands = mutableMapOf<String, ICommand>()
+	private val commands = mutableMapOf<String, ICommand>()
 
-    init {
-        addCommand("hello", Hello())
-        addCommand("dice", Dice())
-        addCommand("weather", OpenWeatherMap())
-        addCommand("authors", Authors())
-        addCommand("value", CoinPrices())
-    }
+	init {
+		addCommand(Hello())
+		addCommand(Dice())
+		addCommand(OpenWeatherMap())
+		addCommand(Authors())
+		addCommand(CoinPrices())
 
-    fun addCommand(name: String, command: ICommand) {
-        commands[name] = command
-        addToDispatcher(name)
-    }
+		// generates a list to add to BotFather
+		generateList()
 
-    fun getCommand(name: String): ICommand? {
-        return commands[name]
-    }
+		println("--> BOT INITIALIZATION <--")
+	}
 
-    fun handle(name: String, context: Context) {
-        val invoke: ICommand? = getCommand(name)
+	/**
+	 * Adds the ICommand to the Map
+	 */
+	private fun addCommand(command: ICommand) {
+		commands[command.name] = command
+		addToDispatcher(command.name)
+	}
 
-        if (invoke != null) {
-            invoke.execute(context)
-        }
-    }
+	/**
+	 * Gets the ICommand from the Map
+	 */
+	private fun getCommand(name: String): ICommand? {
+		return commands[name]
+	}
+
+	/**
+	 * Executes the command if exist
+	 */
+	fun handle(name: String, context: Context) {
+		getCommand(name)?.execute(context)
+	}
+
+	/**
+	 * Prints the sorted list of the commands formatted for BotFather
+	 */
+	private fun generateList() {
+		println("--> COMMAND LIST <--")
+
+		// sorts the map and prints the command list
+		val sorted = commands.toSortedMap()
+		sorted.forEach { (k, v) ->
+			println("$k - ${v.description}")
+		}
+
+		println()
+	}
 }

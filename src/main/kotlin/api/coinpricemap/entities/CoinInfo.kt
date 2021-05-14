@@ -8,9 +8,13 @@ package api.coinpricemap.entities
  **/
 
 data class CoinInfo(
-    val amount: String,
-    val currency: String
+    val `data`: Data
 )
 
+data class Data(
+    val amount: String,
+    val base: String,
+    val currency: String
+)
 
 

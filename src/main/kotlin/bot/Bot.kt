@@ -14,30 +14,34 @@ import com.github.kotlintelegrambot.updater.Updater
  * @since 07/05/2021
  **/
 object Bot {
-    lateinit var dispatcher: Dispatcher
-    val bot = bot {
-        token = Configuration.PROPERTIES["token"].toString()
-        dispatcher = updater.dispatcher
-    }
+	lateinit var dispatcher: Dispatcher
 
-    private val commandManager = CommandManager()
+	val bot = bot {
+		token = Configuration.PROPERTIES["token"].toString()
+		dispatcher = updater.dispatcher
+	}
 
-    init {
-        println("[!] Bot initialized")
-    }
+	private val commandManager = CommandManager()
 
-    /**
-     * Starts the Bot
-     */
-    fun start() {
-        bot.startPolling()
-        println("[!] Bot started polling")
-    }
+	init {
+		println("[!] Bot initialized")
+	}
 
-    fun addToDispatcher(name: String) {
-        dispatcher.command(name) {
-            val context = Context(bot, message, args)
-            commandManager.handle(name, context)
-        }
-    }
+	/**
+	 * Starts the Bot
+	 */
+	fun start() {
+		bot.startPolling()
+		println("[!] Bot started polling")
+	}
+
+	/**
+	 * Allows to add commands after initialization
+	 */
+	fun addToDispatcher(name: String) {
+		dispatcher.command(name) {
+			val context = Context(bot, message, args)
+			commandManager.handle(name, context)
+		}
+	}
 }

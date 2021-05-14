@@ -10,7 +10,10 @@ import bot.command.ICommand
  * @since 07/05/2021
  **/
 class Hello() : ICommand {
-	override fun execute(context : Context) {
+	override val name : String = "hello"
+	override val description: String = "Say hello!"
+
+	override fun execute(context: Context) {
 		context.sendReply("Hello world!")
 	}
 }

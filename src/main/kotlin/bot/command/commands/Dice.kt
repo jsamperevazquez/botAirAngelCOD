@@ -10,7 +10,10 @@ import bot.command.ICommand
  * @since 07/05/2021
  **/
 class Dice() : ICommand {
-	override fun execute(context : Context) {
+	override val name : String = "dice"
+	override val description: String = "Rolls a dice, just a classic"
+
+	override fun execute(context: Context) {
 		context.sendDice()
 	}
 }
