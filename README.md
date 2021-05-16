@@ -5,6 +5,16 @@ Project made with Kotlin
 ```
 TO DO
 ```
+## Commnands
+
+***COMMAND LIST***
+* dice -  What do you expect to happen?
+* dice -  Rolls a dice, just a classic
+* hello -  Say hello!
+* value -  Shows a Cryptocurrency value in Fiat
+* weather -  Shows current weather in the desired location
+
+
 
 ## Usage
 ```
