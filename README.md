@@ -41,10 +41,8 @@ Project made with Kotlin
 
 
 
-## Usage
-```
-TO DO
-```
+## use bot images and gifs
+![Hello png](https://github.com/jsamperevazquez/botAirAngelCOD/blob/Dev/src/main/kotlin/utils/media/hello.png)
 
 ## Libraries
 - [Gson](https://github.com/google/gson) 
