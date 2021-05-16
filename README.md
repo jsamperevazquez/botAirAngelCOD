@@ -33,7 +33,7 @@ Project made with Kotlin
 ## Commnands
 
 ***COMMAND LIST***
-* dice -  What do you expect to happen?
+* author -  What do you expect to happen?
 * dice -  Rolls a dice, just a classic
 * hello -  Say hello!
 * value -  Shows a Cryptocurrency value in Fiat
