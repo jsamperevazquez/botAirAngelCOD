@@ -45,7 +45,7 @@ Project made with Kotlin
 ![Hello png](https://github.com/jsamperevazquez/botAirAngelCOD/blob/Dev/src/main/kotlin/utils/media/hello.png)
 ![Dice gif](https://github.com/jsamperevazquez/botAirAngelCOD/blob/Dev/src/main/kotlin/utils/media/dice.gif)
 ![Authors gif](https://github.com/jsamperevazquez/botAirAngelCOD/blob/Dev/src/main/kotlin/utils/media/authors.gif)
-
+![Values gif](https://github.com/jsamperevazquez/botAirAngelCOD/blob/Dev/src/main/kotlin/utils/media/value.gif)
 
 
 ## Libraries
