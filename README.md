@@ -3,10 +3,11 @@ Project made with Kotlin
 
 ## Configuration
 ***CONFIGURATION CODE***
+
 `fun fromFile(path: String): Boolean {
 val file = File(path)
 if (file.exists()) {
-println("--> CONFIGURATION <--")
+println("--> CONFIGURATION <--")`
 
 			file.forEachLine {
 				val prop = it.split("=").toTypedArray()
@@ -26,8 +27,7 @@ println("--> CONFIGURATION <--")
 			return false
 		}
 	}
-}
-`
+`}`
 
 
 ## Commnands
