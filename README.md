@@ -9,7 +9,7 @@ token=TOKEN
 api_owm=API
 ```
 
-## Commnands
+## Commands
 
 ***COMMAND LIST***
 
