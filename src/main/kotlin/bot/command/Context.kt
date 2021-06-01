@@ -3,6 +3,7 @@ package bot.command
 import com.github.kotlintelegrambot.Bot
 import com.github.kotlintelegrambot.entities.*
 import com.github.kotlintelegrambot.entities.keyboard.InlineKeyboardButton
+import com.github.kotlintelegrambot.entities.polls.PollType
 
 /**
  *
@@ -32,6 +33,17 @@ class Context(private val bot: Bot, private val message: Message, private val ar
 			chatId = getChat(),
 			text = text,
 			replyToMessageId = getMessageId()
+		)
+	}
+
+	fun sendPoll(question: String, options: List<String>, correctOptionId: Int?) {
+		bot.sendPoll(
+			chatId = getChat(),
+			type = PollType.QUIZ,
+			question = question,
+			options = options,
+			correctOptionId = correctOptionId,
+			isAnonymous = false
 		)
 	}
 
