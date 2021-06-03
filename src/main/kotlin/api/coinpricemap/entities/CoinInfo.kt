@@ -4,8 +4,9 @@ package api.coinpricemap.entities
  *
  * Creado por @autor: angel
  *       El  12 de may. de 2021.
- *   //-encoding utf8 -docencoding utf8 -charset utf8(Para el javadoc)
- **/
+ *
+ * To create coin values objects from jsons
+ */
 
 data class CoinInfo(
     val `data`: Data

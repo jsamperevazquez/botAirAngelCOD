@@ -22,6 +22,7 @@ class CommandManager {
 		addCommand(Authors())
 		addCommand(CoinPrices())
 		addCommand(TechTermsQuizz())
+		addCommand(Repos())
 
 		// generates a list to add to BotFather
 		generateList()
