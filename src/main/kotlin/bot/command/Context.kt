@@ -3,6 +3,7 @@ package bot.command
 import com.github.kotlintelegrambot.Bot
 import com.github.kotlintelegrambot.entities.*
 import com.github.kotlintelegrambot.entities.keyboard.InlineKeyboardButton
+import com.github.kotlintelegrambot.entities.polls.PollType
 import retrofit2.http.HTTP
 import java.io.BufferedReader
 import java.io.InputStream
@@ -49,11 +50,22 @@ class Context(private val bot: Bot, private val message: Message, private val ar
         )
     }
 
-    fun sendReply(text: String) {
-        bot.sendMessage(
-            chatId = getChat(),
-            text = text,
-            replyToMessageId = getMessageId()
-        )
-    }
+	fun sendReply(text: String) {
+		bot.sendMessage(
+			chatId = getChat(),
+			text = text,
+			replyToMessageId = getMessageId()
+		)
+	}
+
+	fun sendPoll(question: String, options: List<String>, correctOptionId: Int?) {
+		bot.sendPoll(
+			chatId = getChat(),
+			type = PollType.QUIZ,
+			question = question,
+			options = options,
+			correctOptionId = correctOptionId,
+			isAnonymous = false
+		)
+	}
 }

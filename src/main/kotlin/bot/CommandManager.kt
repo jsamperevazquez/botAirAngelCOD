@@ -21,6 +21,7 @@ class CommandManager {
 		addCommand(OpenWeatherMap())
 		addCommand(Authors())
 		addCommand(CoinPrices())
+		addCommand(TechTermsQuizz())
 		addCommand(Repos())
 
 		// generates a list to add to BotFather
