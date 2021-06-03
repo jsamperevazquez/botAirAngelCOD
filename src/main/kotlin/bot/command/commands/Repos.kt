@@ -27,6 +27,7 @@ class Repos() : ICommand {
 
     /**
      * Execute function with context to point to repositories
+     * V0.1 each repository in a message
      */
 
     override fun execute(context: Context) {
