@@ -8,13 +8,19 @@ import javax.swing.JOptionPane
 /**
  *
  * Creado por @autor: angel
- *       El  12 de may. de 2021.
- *   //-encoding utf8 -docencoding utf8 -charset utf8(Para el javadoc)
- **/
+ * El  12 de may. de 2021.
+ *
+ */
+
 class CoinPriceMap() {
+
     private val HTTP = HTTP()
     private val URL = "https://api.coinbase.com/v2/prices/%s/buy"
 
+    /**
+     * @author Angel
+     * @return object CoinInfo created with Gson from Json
+     */
     fun getCurrentPrice(criptoFiat: String): CoinInfo? {
 
         val response = HTTP.get(
