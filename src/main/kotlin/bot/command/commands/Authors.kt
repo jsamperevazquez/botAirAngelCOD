@@ -11,7 +11,6 @@ import com.github.kotlintelegrambot.entities.keyboard.InlineKeyboardButton
  *       El  08 de may. de 2021.
  *
  */
-
 class Authors() : ICommand {
 	override val name : String = "authors"
 	override val description: String = "What do you expect to happen?"
