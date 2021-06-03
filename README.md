@@ -1,3 +1,4 @@
+
 # Telegram Bot
 Project made with Kotlin
 
@@ -20,6 +21,9 @@ api_owm=API
 | hello |  Say hello! |
 | value |  Shows a Cryptocurrency value in Fiat | 
 | weather |  Shows current weather in the desired location |
+| quiz |  daily technology test |
+| repos |  All user repositories |
+
 
 ## Usage
 ![Hello png](https://github.com/jsamperevazquez/botAirAngelCOD/blob/Dev/src/main/kotlin/utils/media/hello.png)
@@ -33,3 +37,4 @@ api_owm=API
 - [Gson](https://github.com/google/gson) 
 - [Kotlin Telegram Bot](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot)  
 - [OkHttp](https://github.com/square/okhttp)  
+
